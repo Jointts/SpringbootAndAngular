@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="js/angular.min.js"></script>
+    <script src="js/angularController.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body ng-app="ReservationList">
+<div class="content" ng-controller="ReservationListController">
+    <div class="panel" ng-repeat="reservation in reservations">
+        <div class="itemId{|{reservation.id}|}">
+            <button class="close" ng-click="deleteItem(reservation._links.self.href)">X</button>
+            <div class="panel-heading clearfix">
+                <h3 class="panel-title">{|{ reservation.firstName }|}</h3>
+                <h3 class="panel-title">{|{ reservation.lastName }|}</h3>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
